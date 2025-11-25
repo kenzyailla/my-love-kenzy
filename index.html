@@ -3,7 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Playful English — For Kids</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic&display=swap" rel="stylesheet">
+
+   <title>Playful English — For Kids</title>
+  
+
   <style>
     :root{
       --bg:#fff8f0; --card:#ffffff; --accent:#ff6f61; --accent2:#ffd166; --text:#2b2b2b;
@@ -11,7 +15,10 @@
     }
     *{box-sizing:border-box}
     body{
-      margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(180deg,var(--bg),#f0f9ff); color:var(--text);
+      margin:0; font-family: "Noto Kufi Arabic", sans-serif; 
+      background: linear-gradient(180deg,var(--bg),#f0f9ff); color:var(--text);
+
+     
     }
     header{display:flex;align-items:center;gap:16px;padding:20px 24px}
     .logo{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:36px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
@@ -33,6 +40,42 @@
     .meta{font-size:12px;color:#777;margin-top:6px}
 
     footer{padding:18px 24px;font-size:13px;color:#666}
+
+    /* =======================
+       CSS للطباعة على A4
+    ======================= */
+    @media print {
+      @page {
+        size: A4;
+        margin: 1.5cm;
+      }
+      body {
+        background: #fff !important;
+        color: #000;
+        -webkit-print-color-adjust: exact;
+      }
+      .no-print, button, nav {
+        display: none !important;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+        gap: 12px;
+      }
+      .card {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+      }
+      img, .logo {
+        max-width: 100%;
+        height: auto;
+      }
+      header, footer {
+        display: block;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -40,7 +83,9 @@
     <div class="logo">A+</div>
     <div>
       <h1>Playful English — Flashcards</h1>
-      <p class="subtitle">With Arabic translation for kids</p>
+<p class="subtitle">With Arabic translation for kids</p>
+<p class="subtitle">كنزي حبيبت جدو مجاهد الامورة الزاكية</p>
+
     </div>
   </header>
 
@@ -86,7 +131,7 @@
 
     function render(){
       cardsEl.innerHTML = '';
-      items.forEach((it, idx)=>{
+      items.forEach((it)=>{
         const c = document.createElement('div');
         c.className = 'card';
         c.innerHTML = `
@@ -102,3 +147,4 @@
   </script>
 </body>
 </html>
+
