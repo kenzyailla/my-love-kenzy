@@ -11,7 +11,7 @@
     }
     *{box-sizing:border-box}
     body{
-      margin:0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      margin:0; font-family: 'Noto Kufi Arabic', sans-serif; 
       background: linear-gradient(180deg,var(--bg),#f0f9ff); color:var(--text);
     }
     header{display:flex;align-items:center;gap:16px;padding:20px 24px}
@@ -58,33 +58,51 @@
   </footer>
 
   <script>
-    // كلمات جديدة + صور إيموجي حديثة
+    // 30 كلمة جديدة + صور إيموجي حديثة
     const items = [
-      // Animals
+      // الحيوانات
       {e:'🦊', w:'Fox', a:'ثعلب'},
       {e:'🐢', w:'Turtle', a:'سلحفاة'},
       {e:'🐸', w:'Frog', a:'ضفدع'},
       {e:'🦉', w:'Owl', a:'بومة'},
       {e:'🐴', w:'Horse', a:'حصان'},
       {e:'🐝', w:'Bee', a:'نحلة'},
-      // Food
+      {e:'🦋', w:'Butterfly', a:'فراشة'},
+      {e:'🐘', w:'Elephant', a:'فيل'},
+      {e:'🦒', w:'Giraffe', a:'زرافة'},
+      {e:'🐼', w:'Panda', a:'باندا'},
+      
+      // الطعام
       {e:'🍞', w:'Bread', a:'خبز'},
       {e:'🥛', w:'Milk', a:'حليب'},
       {e:'🧀', w:'Cheese', a:'جبن'},
       {e:'🥚', w:'Egg', a:'بيضة'},
-      // School
+      {e:'🍎', w:'Apple', a:'تفاحة'},
+      {e:'🍌', w:'Banana', a:'موز'},
+      {e:'🍕', w:'Pizza', a:'بيتزا'},
+      {e:'🍦', w:'Ice Cream', a:'آيس كريم'},
+      
+      // المدرسة والأدوات
       {e:'🎒', w:'Bag', a:'حقيبة'},
       {e:'📏', w:'Ruler', a:'مسطرة'},
       {e:'🩹', w:'Eraser', a:'ممحاة'}, 
       {e:'📓', w:'Notebook', a:'دفتر'},
-      // Nature & Weather
+      {e:'✏️', w:'Pencil', a:'قلم رصاص'},
+      {e:'📚', w:'Books', a:'كتب'},
+      
+      // الطبيعة والطقس
       {e:'🌈', w:'Rainbow', a:'قوس قزح'},
       {e:'🌧️', w:'Rain', a:'مطر'},
       {e:'❄️', w:'Snow', a:'ثلج'},
       {e:'🍃', w:'Leaf', a:'ورقة نبات'},
-      // Transport
+      {e:'🌞', w:'Sun', a:'شمس'},
+      {e:'⭐', w:'Star', a:'نجمة'},
+      
+      // المواصلات
       {e:'🚗', w:'Car', a:'سيارة'},
-      {e:'🚲', w:'Bike', a:'دراجة'}
+      {e:'🚲', w:'Bike', a:'دراجة'},
+      {e:'✈️', w:'Airplane', a:'طائرة'},
+      {e:'🚂', w:'Train', a:'قطار'}
     ];
 
     const cardsEl = document.getElementById('cards');
