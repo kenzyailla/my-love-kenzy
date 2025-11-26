@@ -1,48 +1,187 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>كنزي — بطاقات جديدة للأطفال</title>
+  <!-- تحميل خط Noto Kufi Arabic -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#fff8f0; --card:#ffffff; --accent:#ff6f61; --accent2:#ffd166; --text:#2b2b2b;
       --glass: rgba(255,255,255,0.6);
+      --arabic-font: 'Noto Kufi Arabic', sans-serif;
     }
-    *{box-sizing:border-box}
+    *{
+      box-sizing:border-box;
+      letter-spacing: 0 !important; /* إزالة المسافات بين الحروف */
+    }
     body{
-      margin:0; font-family: 'Noto Kufi Arabic', sans-serif; 
-      background: linear-gradient(180deg,var(--bg),#f0f9ff); color:var(--text);
+      margin:0; 
+      font-family: var(--arabic-font);
+      background: linear-gradient(180deg,var(--bg),#f0f9ff); 
+      color:var(--text);
+      line-height: 1.6; /* تحسين تباعد الأسطر */
+      text-align: right; /* محاذاة لليمين */
+      direction: rtl; /* اتجاه النص من اليمين لليسار */
     }
-    header{display:flex;align-items:center;gap:16px;padding:20px 24px}
-    .logo{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:36px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
-    h1{margin:0;font-size:20px}
-    p.subtitle{margin:0;color:#5b5b5b;font-size:13px}
+    
+    header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:20px 24px;
+      text-align: right;
+    }
+    
+    .logo{
+      width:72px;
+      height:72px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:36px;
+      box-shadow:0 6px 18px rgba(0,0,0,.12)
+    }
+    
+    h1{
+      margin:0;
+      font-size:24px;
+      font-family: var(--arabic-font);
+      font-weight: 700;
+      line-height: 1.4;
+      text-align: right;
+    }
+    
+    p.subtitle{
+      margin:0;
+      color:#5b5b5b;
+      font-size:16px;
+      font-family: var(--arabic-font);
+      text-align: right;
+    }
 
-    .wrap{padding:18px 24px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
-    .card{background:var(--card);border-radius:12px;padding:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .16s,box-shadow .16s;border:1px solid rgba(12,12,12,.04)}
-    .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(2,46,61,.08)}
-    .emoji{font-size:44px}
-    .word{font-size:18px;margin-top:8px;font-weight:700}
-    .arabic{font-size:18px;margin-top:4px;font-weight:700;color:#444;}
+    .wrap{
+      padding:18px 24px;
+      text-align: right;
+    }
+    
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+      gap:16px;
+    }
+    
+    .card{
+      background:var(--card);
+      border-radius:16px;
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition:transform .16s,box-shadow .16s;
+      border:1px solid rgba(12,12,12,.04);
+      font-family: var(--arabic-font);
+      text-align: center;
+    }
+    
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 12px 30px rgba(2,46,61,.08)
+    }
+    
+    .emoji{
+      font-size:48px;
+      margin-bottom: 8px;
+    }
+    
+    .word{
+      font-size:18px;
+      margin-top:8px;
+      font-weight:600;
+      font-family: var(--arabic-font);
+    }
+    
+    .arabic{
+      font-size:22px;
+      margin-top:8px;
+      font-weight:700;
+      color:#2b2b2b;
+      font-family: var(--arabic-font);
+      line-height: 1.4;
+    }
 
-    footer{padding:18px 24px;font-size:13px;color:#666}
+    footer{
+      padding:18px 24px;
+      font-size:14px;
+      color:#666;
+      text-align: center;
+      font-family: var(--arabic-font);
+    }
 
-    /* Print A4 */
+    /* تحسينات للطباعة */
     @media print {
-      @page { size: A4; margin: 1.5cm; }
-      body { background: #fff !important; color: #000; -webkit-print-color-adjust: exact; }
-      .grid { grid-template-columns: repeat(auto-fit,minmax(120px,1fr)); gap: 12px; }
-      .card { border: 1px solid #000 !important; box-shadow: none !important; page-break-inside: avoid; }
-      header, footer { display: block; text-align: center; }
-      .no-print, button, nav { display: none !important; }
+      @page { 
+        size: A4; 
+        margin: 1.5cm; 
+      }
+      body { 
+        background: #fff !important; 
+        color: #000; 
+        -webkit-print-color-adjust: exact; 
+        font-family: var(--arabic-font) !important;
+      }
+      .grid { 
+        grid-template-columns: repeat(auto-fit,minmax(130px,1fr)); 
+        gap: 14px; 
+      }
+      .card { 
+        border: 1px solid #000 !important; 
+        box-shadow: none !important; 
+        page-break-inside: avoid; 
+      }
+      header, footer { 
+        display: block; 
+        text-align: center; 
+      }
+      .no-print, button, nav { 
+        display: none !important; 
+      }
+      .arabic {
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+
+    /* تحسينات للجوال */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 12px;
+      }
+      .card {
+        padding: 12px;
+      }
+      .emoji {
+        font-size: 40px;
+      }
+      .arabic {
+        font-size: 20px;
+      }
+      .word {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">A+</div>
+    <div class="logo">ك</div>
     <div>
       <h1>كنزي — بطاقات جديدة للأطفال</h1>
       <p class="subtitle">مع ترجمة عربية حديثة</p>
@@ -54,7 +193,7 @@
   </div>
 
   <footer>
-    Works offline — Printable — With full Arabic translation.
+    يعمل بدون إنترنت — قابل للطباعة — بترجمة عربية كاملة
   </footer>
 
   <script>
